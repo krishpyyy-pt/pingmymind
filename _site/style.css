@@ -12,15 +12,15 @@ body.theme-light {
     --color-bg: #F8F9FA;
     --color-text: #343A40;
     --color-accent: #B07D62;
-    --color-ui-border: #CED4DA; /* A border for UI elements */
-    --color-ui-bg: #F8F9FA;     /* Background for UI elements */
+    --color-ui-border: #030304;
+    --color-ui-bg: #F8F9FA;
 }
 
 body.theme-sepia {
     --color-bg: #FBF3E6;
     --color-text: #5D4037;
     --color-accent: #B07D62;
-    --color-ui-border: #D7CCC8;
+    --color-ui-border: #000000;
     --color-ui-bg: #FBF3E6;
 }
 
@@ -29,7 +29,7 @@ body.theme-dark {
     --color-text: #CED4DA;
     --color-accent: #B07D62;
     --color-ui-border: #495057;
-    --color-ui-bg: #343A40; /* Slightly lighter bg for pop-up */
+    --color-ui-bg: #343A40;
 }
 
 /* 2. Font Styles */
@@ -49,12 +49,10 @@ body.font-accessible {
     --font-heading: 'Atkinson Hyperlegible', sans-serif;
 }
 
-
 /* ========================================
   Global Styles & Reset
 ========================================
 */
-
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -73,7 +71,6 @@ body {
   Typography
 ========================================
 */
-
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     margin-top: 1.5em;
@@ -115,8 +112,6 @@ blockquote {
   Layout & Header
 ========================================
 */
-
-/* Center the main content column */
 .navbar,
 .content-wrapper {
     max-width: 750px;
@@ -140,7 +135,6 @@ blockquote {
     font-size: 1.25rem;
 }
 
-/* Link for post page title */
 .title-link {
     color: var(--color-text);
     text-decoration: none;
@@ -169,7 +163,7 @@ blockquote {
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
-    font-family: var(--font-heading); /* Use heading font for "Aa" */
+    font-family: var(--font-heading);
     transition: all 0.2s ease;
 }
 
@@ -179,20 +173,28 @@ blockquote {
     border-color: var(--color-text);
 }
 
+.appearance-wrapper {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end; /* align dropdown under button */
+    /* Uncomment for debugging */
+    /* background: red; padding: 20px; */
+}
+
 .appearance-modal {
     position: absolute;
-    top: 70px; /* Position below the header */
-    right: 1rem;
+    top: calc(100% + 8px);
+    right: 0;
     width: 220px;
     background: var(--color-ui-bg);
     border: 1px solid var(--color-ui-border);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     border-radius: 8px;
-    z-index: 100;
+    z-index: 1000;
 }
 
-/* We use [hidden] selector to toggle visibility */
 .appearance-modal[hidden] {
     display: none;
 }
@@ -213,7 +215,7 @@ blockquote {
 }
 
 .setting-group button {
-    flex: 1; /* Make buttons share space equally */
+    flex: 1;
     background: none;
     border: 1px solid var(--color-ui-border);
     color: var(--color-text);
@@ -230,7 +232,6 @@ blockquote {
     color: var(--color-accent);
 }
 
-/* The active state for selected buttons */
 .setting-group button.active {
     background: var(--color-text);
     color: var(--color-bg);
@@ -242,7 +243,6 @@ blockquote {
 ========================================
 */
 
-/* Homepage: Post Preview */
 .post-preview {
     border-bottom: 1px solid var(--color-ui-border);
     padding-bottom: 1.5rem;
@@ -273,7 +273,6 @@ blockquote {
     font-weight: 600;
 }
 
-/* Single Post Page */
 .post-full h1 {
     margin-top: 0;
 }
@@ -282,17 +281,38 @@ blockquote {
     margin-bottom: 2rem;
 }
 
+/* ========================================
+  Navbar Links
+========================================
+*/
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+    text-decoration: none;
+}
 
 /* ========================================
   Responsiveness
 ========================================
 */
-
 @media (max-width: 600px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
-
-    /* Make modal span the width of the screen with padding */
     .appearance-modal {
         left: 1rem;
         right: 1rem;

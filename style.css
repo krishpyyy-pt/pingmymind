@@ -127,7 +127,6 @@ blockquote {
     align-items: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    position: relative; /* anchor for modal */
 }
 
 .blog-title {

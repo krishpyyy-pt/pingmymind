@@ -1,13 +1,13 @@
 module.exports = function(eleventyConfig) {
 
-  eleventyConfig.addPassthroughCopy("/style.css");
-  eleventyConfig.addPassthroughCopy("/script.js");
+  // Remove the starting "/"
+  eleventyConfig.addPassthroughCopy("style.css");
+  eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("images");
 
  // This is the FIXED code
 eleventyConfig.addFilter("readableDate", dateObj => {
-  // First, create a new Date object from the string
-  const date = new Date(dateObj);
+ const date = new Date(dateObj);
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
