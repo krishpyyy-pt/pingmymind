@@ -12,7 +12,7 @@ body.theme-light {
     --color-bg: #F8F9FA;
     --color-text: #343A40;
     --color-accent: #B07D62;
-    --color-ui-border: #CED4DA; /* A border for UI elements */
+    --color-ui-border: #030304; /* A border for UI elements */
     --color-ui-bg: #F8F9FA;     /* Background for UI elements */
 }
 
@@ -20,7 +20,7 @@ body.theme-sepia {
     --color-bg: #FBF3E6;
     --color-text: #5D4037;
     --color-accent: #B07D62;
-    --color-ui-border: #D7CCC8;
+    --color-ui-border: #000000;
     --color-ui-bg: #FBF3E6;
 }
 
