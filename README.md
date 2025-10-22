@@ -1,4 +1,4 @@
-#My Personal Blog
+# My Personal Blog
 
 This is a clean, minimal personal blog built with the [Eleventy (11ty)](https://www.11ty.dev/) static site generator. It features a theme and font switcher to provide a comfortable reading experience for users.
 
