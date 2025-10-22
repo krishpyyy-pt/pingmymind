@@ -1,0 +1,50 @@
+<h1>My Personal Blog</h1>
+<p>This is a clean, minimal personal blog built with the <a href="https://www.11ty.dev/">Eleventy (11ty)</a> static site generator. It features a theme and font switcher to provide a comfortable reading experience for users.</p>
+<h2>Features</h2>
+<ul>
+<li><strong>Static Site:</strong> Fast, secure, and simple.</li>
+<li><strong>Appearance Toggle:</strong>
+<ul>
+<li><strong>Color Themes:</strong> Light, Sepia, and Dark modes.</li>
+<li><strong>Font Styles:</strong> Sans-Serif, Serif, and Accessible font options.</li>
+</ul>
+</li>
+<li><strong>User Preferences:</strong> Remembers the user's theme and font choices in <code>localStorage</code>.</li>
+<li><strong>Markdown Content:</strong> Blog posts are written in simple Markdown files located in the <code>posts/</code> directory.</li>
+<li><strong>Nunjucks Templates:</strong> Uses Nunjucks for flexible layouts.</li>
+</ul>
+<h2>Technology Stack</h2>
+<ul>
+<li><strong><a href="https://www.11ty.dev/">Eleventy (11ty)</a></strong>: The static site generator that builds the site.</li>
+<li><strong><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></strong>: The templating language used for layouts.</li>
+<li><strong>Markdown</strong>: For writing blog posts.</li>
+<li><strong>CSS</strong>: For styling, using CSS variables for easy theming.</li>
+<li><strong>JavaScript</strong>: For handling the appearance modal and saving user preferences.</li>
+</ul>
+<h2>Getting Started</h2>
+<h3>Prerequisites</h3>
+<p>You must have <a href="https://nodejs.org/">Node.js</a> (which includes <code>npm</code>) installed on your machine.</p>
+<h3>Installation</h3>
+<ol>
+<li>Clone this repository to your local machine.</li>
+<li>Navigate into the project directory (e.g., <code>cd Geem_b</code>).</li>
+<li>Install the project dependencies (specifically Eleventy):<pre><code class="language-sh">npm install
+</code></pre>
+</li>
+</ol>
+<h3>Running the Project Locally</h3>
+<p>To build the site and run a local development server with hot-reloading, run the <code>start</code> script from your <code>package.json</code> file:</p>
+<pre><code class="language-sh">npm start
+</code></pre>
+<p>This will build the site into the <code>_site/</code> folder and serve it locally, usually at <code>http://localhost:8080</code>.</p>
+<h2>Project Structure</h2>
+<pre><code>.
+├── _includes/        # Nunjucks layouts and partials (e.g., base.njk)
+├── posts/            # Blog posts written in Markdown
+├── _site/            # The final, built static site (this is what's deployed)
+├── .eleventy.js      # Eleventy configuration file (if you have one)
+├── index.njk         # The template for the homepage
+├── package.json      # Project dependencies and scripts
+├── script.js         # Site-wide JavaScript
+└── style.css         # Site-wide CSS
+</code></pre>
