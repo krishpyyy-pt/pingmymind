@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("admin");
 
  // This is the FIXED code
 eleventyConfig.addFilter("readableDate", dateObj => {

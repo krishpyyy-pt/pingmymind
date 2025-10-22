@@ -1,0 +1,27 @@
+# This file configures the Decap CMS admin panel
+
+backend:
+  name: git-gateway
+  branch: main # Use 'main' or 'master' depending on your GitHub repo
+
+# This tells the CMS where to save images
+media_folder: "images"
+public_folder: "/images"
+
+# This defines your "Blog" collection
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "posts" # Tells Decap to look in your 'Geem_b/posts/' folder
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      # These fields match your post1.md front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "_indvposts.njk" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Image Alt Text", name: "featured_alt", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
