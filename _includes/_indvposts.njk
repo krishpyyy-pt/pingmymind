@@ -1,0 +1,18 @@
+---
+
+layout: "base.njk"
+
+---
+<article class="post-full">
+<p class="post-meta"> Published on {{ date | readableDate }}</p> 
+<h1>{{ title }}</h1>
+    {% if featured_image %}
+        <figure class="featured-image">
+            <img src="{{ featured_image | url }}" alt="{{ featured_alt | default('') }}">
+            {% if featured_alt %}
+                <figcaption>{{ featured_alt }}</figcaption>
+            {% endif %}
+        </figure>
+    {% endif %}
+{{ content | safe }}
+</article>

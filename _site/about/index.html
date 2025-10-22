@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About | Adaptive Reading Room</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Lora&family=Poppins&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('user-theme') || 'theme-light';
+        const savedFont = localStorage.getItem('user-font') || 'font-sans';
+        document.body.className = savedTheme + ' ' + savedFont;
+      })();
+    </script>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <span class="blog-title"><a href="/" class="title-link">Adaptive Reading Room</a></span>
+                <div class="nav-links">
+                    <a href="/about/">About</a>
+                    </div>
+            </div>
+            <button id="appearance-button" class="appearance-toggle" aria-label="Toggle appearance settings" title="Appearance">
+                Aa
+            </button>
+        </nav>
+    </header>
+
+    <div id="appearance-modal" class="appearance-modal" hidden>
+        <h4>Color Theme</h4>
+        <div class="setting-group" id="theme-buttons">
+            <button data-theme="theme-light">Light</button>
+            <button data-theme="theme-sepia">Sepia</button>
+            <button data-theme="theme-dark">Dark</button>
+        </div>
+        
+        <h4>Font Style</h4>
+        <div class="setting-group" id="font-buttons">
+            <button data-font="font-sans">Sans-Serif</button>
+            <button data-font="font-serif">Serif</button>
+            <button data-font="font-accessible">Accessible</button>
+        </div>
+    </div>
+
+    <main class="content-wrapper">
+        <article class="post-full">
+<h1>About the Author</h1>
+<p class="post-meta">Welcome to the site!</p> 
+<figure class="featured-image">
+    <img src="/images/image.png" alt="A profile picture or relevant image">
+    <figcaption>This could be a photo of you or something that represents your blog.</figcaption>
+</figure>
+<h2>My Mission</h2>
+<p>This is the main content for your about page. You can write about your philosophy, your background, or what this blog is for.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<h3>Contact Me</h3>
+<p>You can also add links to your social media or other websites:</p>
+<ul>
+<li><strong>Twitter:</strong> <a href="https://twitter.com/yourhandle">YourHandle</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourname">YourName</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/yourusername">YourUsername</a></li>
+</ul>
+<br>
+<p><a href="/">&larr; Back to all posts</a></p>
+</article>
+    </main>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>

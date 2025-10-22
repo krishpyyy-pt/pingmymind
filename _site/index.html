@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Adaptive reader room | Adaptive Reading Room</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Lora&family=Poppins&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('user-theme') || 'theme-light';
+        const savedFont = localStorage.getItem('user-font') || 'font-sans';
+        document.body.className = savedTheme + ' ' + savedFont;
+      })();
+    </script>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <span class="blog-title"><a href="/" class="title-link">Adaptive Reading Room</a></span>
+                <div class="nav-links">
+                    <a href="/about/">About</a>
+                    </div>
+            </div>
+            <button id="appearance-button" class="appearance-toggle" aria-label="Toggle appearance settings" title="Appearance">
+                Aa
+            </button>
+        </nav>
+    </header>
+
+    <div id="appearance-modal" class="appearance-modal" hidden>
+        <h4>Color Theme</h4>
+        <div class="setting-group" id="theme-buttons">
+            <button data-theme="theme-light">Light</button>
+            <button data-theme="theme-sepia">Sepia</button>
+            <button data-theme="theme-dark">Dark</button>
+        </div>
+        
+        <h4>Font Style</h4>
+        <div class="setting-group" id="font-buttons">
+            <button data-font="font-sans">Sans-Serif</button>
+            <button data-font="font-serif">Serif</button>
+            <button data-font="font-accessible">Accessible</button>
+        </div>
+    </div>
+
+    <main class="content-wrapper">
+        <h1>Posts</h1><article class="post-preview">
+    <h2><a href="/posts/post3/">Post 3 this might not be lol</a></h2>
+    <p class="post-meta">October 18, 2025</p>
+    <p>This is a short excerpt of the blog post, inviting the user to click and read more about the &#39;Digital Zen Garden&#39; concept...</p>
+    <a href="/posts/post3/" class="read-more">Read more &rarr;</a>
+</article><article class="post-preview">
+    <h2><a href="/posts/post2/">Post 2 this might be lol</a></h2>
+    <p class="post-meta">October 18, 2025</p>
+    <p>This is a short excerpt of the blog post, inviting the user to click and read more about the &#39;Digital Zen Garden&#39; concept...</p>
+    <a href="/posts/post2/" class="read-more">Read more &rarr;</a>
+</article><article class="post-preview">
+    <h2><a href="/posts/post1/">A journey to the mall</a></h2>
+    <p class="post-meta">October 18, 2025</p>
+    <p>This is a short excerpt of the blog post, inviting the user to click and read more about the &#39;Digital Zen Garden&#39; concept...</p>
+    <a href="/posts/post1/" class="read-more">Read more &rarr;</a>
+</article>
+    </main>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
