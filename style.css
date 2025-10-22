@@ -179,10 +179,12 @@ blockquote {
     border-color: var(--color-text);
 }
 
+/* This is the NEW rule to replace it with */
 .appearance-modal {
     position: absolute;
-    top: 70px; /* Position below the header */
-    right: 1rem;
+    top: 100%; /* Position it below the button's wrapper */
+    right: 0;   /* Align it to the right of the button's wrapper */
+    margin-top: 8px; /* Add a small gap */
     width: 220px;
     background: var(--color-ui-bg);
     border: 1px solid var(--color-ui-border);
@@ -323,4 +325,7 @@ blockquote {
     color: var(--color-accent);
     opacity: 1;
     text-decoration: none;
+}
+.appearance-wrapper {
+    position: relative;
 }

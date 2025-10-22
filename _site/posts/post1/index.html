@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> A journey to the mall | Adaptive Reading Room</title>
+    <title> A journey to the mall | Ping my Mind</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,32 +24,36 @@
     <header>
         <nav class="navbar">
             <div class="nav-left">
-                <span class="blog-title"><a href="/" class="title-link">Adaptive Reading Room</a></span>
+                <span class="blog-title"><a href="/" class="title-link" style= "font-size:50px">Ping my Mind</a></span>
                 <div class="nav-links">
-                    <a href="/about/">About</a>
+                    <a href="/about/">About Author</a>
                     </div>
             </div>
-            <button id="appearance-button" class="appearance-toggle" aria-label="Toggle appearance settings" title="Appearance">
-                Aa
-            </button>
+          
+            
+            <div class="appearance-wrapper">
+                <button id="appearance-button" class="appearance-toggle" aria-label="Toggle appearance settings" title="Appearance">
+                    Aa
+                </button>
+                <div id="appearance-modal" class="appearance-modal" hidden>
+                    <h4>Color Theme</h4>
+                    <div class="setting-group" id="theme-buttons">
+                        <button data-theme="theme-light">Light</button>
+                        <button data-theme="theme-sepia">Sepia</button>
+                        <button data-theme="theme-dark">Dark</button>
+                    </div>
+                    
+                    <h4>Font Style</h4>
+                    <div class="setting-group" id="font-buttons">
+                        <button data-font="font-sans">Sans-Serif</button>
+                        <button data-font="font-serif">Serif</button>
+                        <button data-font="font-accessible">Accessible</button>
+                    </div>
+                </div>
+            </div>
+            
         </nav>
     </header>
-
-    <div id="appearance-modal" class="appearance-modal" hidden>
-        <h4>Color Theme</h4>
-        <div class="setting-group" id="theme-buttons">
-            <button data-theme="theme-light">Light</button>
-            <button data-theme="theme-sepia">Sepia</button>
-            <button data-theme="theme-dark">Dark</button>
-        </div>
-        
-        <h4>Font Style</h4>
-        <div class="setting-group" id="font-buttons">
-            <button data-font="font-sans">Sans-Serif</button>
-            <button data-font="font-serif">Serif</button>
-            <button data-font="font-accessible">Accessible</button>
-        </div>
-    </div>
 
     <main class="content-wrapper">
         <article class="post-full">
@@ -77,6 +81,6 @@ paragraphs...</p>
 </article>
     </main>
     
-    <script src="script.js" defer></script>
+    <script src="/script.js" defer></script>
 </body>
 </html>
