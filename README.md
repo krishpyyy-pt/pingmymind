@@ -1,6 +1,6 @@
 # Ping my Mind - A Minimal Eleventy Blog
 
-![Screenshot of the Ping my Mind blog homepage in dark mode](https://github.com/krishpyyy-pt/pingmymind/blob/main/WhatsApp%20Image%202025-10-25%20at%208.08.43%20PM.jpeg?raw=true)
+![Screenshot of the Ping my Mind blog homepage in dark mode](readme_img.png)
 
 This is a clean, minimal, and responsive personal blog built with [Eleventy (11ty)](https://www.11ty.dev/). It is designed for a comfortable reading experience and includes a built-in appearance switcher and a pre-configured CMS for easy posting.
 
@@ -123,7 +123,4 @@ This project is ready to be deployed to [Netlify](https://www.netlify.com/) and 
 ├── package.json        # Project dependencies and scripts
 ├── script.js           # JavaScript for theme/font switching
 └── style.css           # All styles for the blog
-```
-
-```
 ```
