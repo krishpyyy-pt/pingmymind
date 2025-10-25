@@ -319,10 +319,17 @@ blockquote {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
     .appearance-modal {
-        left: 1rem;
-        right: 1rem;
-        width: auto;
-    }
+    /* This aligns the modal's right edge with its parent (the 'Aa' button) */
+    right: 0; 
+    left: auto; /* We no longer want it to stretch from the left */
+
+    /* This is the key: it sets a max width to prevent overflow */
+    /* It can be 220px, but no wider than the screen (minus padding) */
+    max-width: calc(100vw - 2rem); 
+
+    /* We can let it try to be 220px, but max-width will stop it */
+    width: 220px; 
+}
     .navbar {
     /* Stack the left (title/links) and right ('Aa' button) sections */
     flex-direction: column;
@@ -356,4 +363,9 @@ blockquote {
     top: 1.5rem;
     right: 1rem;
 }
+}
+.post-full img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* This just adds nice rounded corners */
 }
