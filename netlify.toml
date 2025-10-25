@@ -1,7 +1,7 @@
 # This rule rewrites requests from admin.yourproject.tech
 # to the /admin path of your site.
 [[redirects]]
-  from = "https://admin.yourproject.tech/*"
+  from = "https://admin.pingmymind.tech/*"
   to = "/admin/:splat"
   status = 200 # This makes it a rewrite, not a redirect
   force = true
