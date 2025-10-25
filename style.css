@@ -132,7 +132,8 @@ blockquote {
 .blog-title {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 2.25rem;
+    line-height: 1.1;
 }
 
 .title-link {
@@ -305,7 +306,11 @@ blockquote {
     opacity: 1;
     text-decoration: none;
 }
-
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 /* ========================================
   Responsiveness
 ========================================
@@ -318,4 +323,37 @@ blockquote {
         right: 1rem;
         width: auto;
     }
+    .navbar {
+    /* Stack the left (title/links) and right ('Aa' button) sections */
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+    gap: 1rem; /* Add space between the stacked sections */
+    position: relative; /* Needed for positioning the 'Aa' button */
+}
+
+.nav-left {
+    /* Stack the title and the nav links */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem; /* Tighter space between title and links */
+}
+
+.blog-title {
+    font-size: 2rem; /* Slightly smaller title on mobile */
+}
+
+.nav-links {
+    /* Ensure links are stacked and not side-by-side */
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+}
+
+.appearance-wrapper {
+    /* Move the 'Aa' button to the top right corner */
+    /* This takes it out of the normal flow */
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+}
 }
