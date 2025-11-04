@@ -5,29 +5,34 @@ permalink: "/about/"
 ---
 <article class="post-full">
 
-# About the Author
+### About the Author
 
-<p class="post-meta">Welcome to the site!</p> 
+Hi, I'm Kavyansh Garg, and welcome to Ping my Mind.
 
-<figure class="featured-image">
-    <img src="/images/image.png" alt="A profile picture or relevant image">
-    <figcaption>This could be a photo of you or something that represents your blog.</figcaption>
-</figure>
+Let's be honest: cybersecurity can be daunting. It’s an ocean of complex, fast-moving topics, and it’s easy to feel lost.
 
-## My Mission
+I started this blog to fix that.
 
-This is the main content for your about page. You can write about your philosophy, your background, or what this blog is for. 
+I am a bachelor's student with a deep passion for cybersecurity (I'm also Google Certified in the field). I have a very curious mind, and when I get curious about something, I have a personal drive to understand it so well that I can make it simple for anyone.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### My Mission
 
-### Contact Me
+My mission here is simple: **I want to make difficult things easy.**
 
-You can also add links to your social media or other websites:
+My goal is for you to read a post on a "mind-boggling" topic and leave thinking, "Oh, so *that's* how it works. That wasn't as hard as I thought."
 
-* **Twitter:** [YourHandle](https://twitter.com/yourhandle)
-* **LinkedIn:** [YourName](https://linkedin.com/in/yourname)
-* **GitHub:** [YourUsername](https://github.com/yourusername)
+This blog is where I get my thoughts out, document what I'm learning, and translate the complex into the clear.
 
+It's also the home for my content series, where I use this same curiosity to ask questions of the best minds in the industry, so we can all learn from their journeys and insights.
+
+### Let's Connect
+
+I love gaining new information and connecting with other curious minds. The best place to find me (and all my latest work) is on LinkedIn.
+
+  * **LinkedIn:** [Your LinkedIn URL]
+  * **[Any Other Social]:** [Your Handle]
+
+Or, you can head straight to [all posts](https://pingmymind.netlify.app/blog/) to see my latest breakdowns.
 <br>
 <p><a href="/">&larr; Back to all posts</a></p>
 
