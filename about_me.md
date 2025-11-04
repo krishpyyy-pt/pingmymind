@@ -33,7 +33,5 @@ I love gaining new information and connecting with other curious minds. The best
   * **[Any Other Social]:** [Your Handle]
 
 Or, you can head straight to [all posts](https://pingmymind.netlify.app/blog/) to see my latest breakdowns.
-<br>
-<p><a href="/">&larr; Back to all posts</a></p>
 
 </article>
