@@ -29,8 +29,9 @@ It's also the home for my content series, where I use this same curiosity to ask
 
 I love gaining new information and connecting with other curious minds. The best place to find me (and all my latest work) is on LinkedIn.
 
-  * **LinkedIn:** (https://www.linkedin.com/in/kavyansh-garg-71ab9a363/)
-  * **Github:** [visit](https://www.github.com/krishpyyy-pt)
+  * **LinkedIn:** [Connect with me](https://www.linkedin.com/in/kavyansh-garg-71ab9a363/)
+  * **Email:** [Send me a message](mailto:pingmymind.contact@gmail.com)
+  * **Github:** [View my projects](https://www.github.com/krishpyyy-pt)
 
 Or, you can head straight to [all posts](https://pingmymind.netlify.app/blog/) to see my latest breakdowns.
 
