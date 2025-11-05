@@ -19,7 +19,7 @@ const isProduction = process.env.NODE_ENV === 'production';
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("/admin");
+  eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy({ "public": "/" });
 
  // This is the FIXED code
