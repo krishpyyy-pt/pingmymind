@@ -4,7 +4,7 @@ backend:
   name: git-gateway
   branch: main # Use 'main' or 'master' depending on your GitHub repo
 # This tells the CMS where to save images
-media_folder: "images"
+media_folder: "/images"
 public_folder: "/images"
 
 # This defines your "Blog" collection
