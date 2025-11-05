@@ -3,8 +3,6 @@
 backend:
   name: git-gateway
   branch: main # Use 'main' or 'master' depending on your GitHub repo
-#for editorial mode
-publish_mode: editorial_workflow
 # This tells the CMS where to save images
 media_folder: "images"
 public_folder: "/images"
@@ -26,3 +24,4 @@ collections:
       - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
       - { label: "Image Alt Text", name: "featured_alt", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, required: false }
