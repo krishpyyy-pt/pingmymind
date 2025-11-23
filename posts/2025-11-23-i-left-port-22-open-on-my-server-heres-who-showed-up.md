@@ -61,15 +61,11 @@ I extracted the top 10 passwords that the attackers tried. At first glance, they
 4.
 123 -> 131 Times
 5. password -> 85 Times
-6.
-1234 -> 68 Times
+6.1234 -> 68 Times
 7. nPSpP4PBW0     -> 61 Times
-8.
-12345678 -> 57 Times
-9.
-P@ssw0rd -> 53 Times 
- 
-10.    12345 -> 52 Times
+8.12345678 -> 57 Times
+9.P@ssw0rd -> 53 Times 
+10. 12345 -> 52 Times
 
 **The Insight:** The high volume of 345gs... passwords is the smoking gun. These aren't random strings.These are the factory default passwords for specific brands of IP Cameras and DVRs.This suggests I was being targeted by an IoT Botnet (likely a Mirai variant). The bots were blindly throwing these specific DVR credentials at my Azure server, hoping I was actually a vulnerable security camera they could recruit into their botnet fleet.
 
@@ -79,7 +75,7 @@ Also nPSp... this complex string appears to be a specific default credential for
 
 Once they thought they were "in," here is what they tried to run.You can see them checking for GPUs (to mine crypto) and checking CPU architecture (to download the right malware binary).
 
-![Top Commands Executed](/images/top_commands_executed.png)
+![Top Commands Executed](/images/top_executed_commands.png)
 
 **Visualizing the Attack**
 
