@@ -79,13 +79,13 @@ Also nPSp... this complex string appears to be a specific default credential for
 
 Once they thought they were "in," here is what they tried to run.You can see them checking for GPUs (to mine crypto) and checking CPU architecture (to download the right malware binary).
 
-![Top Commands Executed](images/Top_command_executed.png)
+![Top Commands Executed](/images/Top_commands_executed.png)
 
 **Visualizing the Attack**
 
 I used Plotly (Python) to map the IP addresses of every attacker. While these IPs are likely just other infected machines (proxies), it gives a stunning visualization of the scale of the attack.
 
-![World Map plotly](images/Map_plotly.png)
+![World Map plotly](/images/Map_plotly.png)
 
 <h3>Conclusion</h3>
 This experiment proved that "Security by Obscurity" is dead.I didn't advertise this server. I didn't verify it with a domain name. It was just a lonely IP address in the cloud. Yet, within 5 minutes, the automation found me.If you are putting infrastructure on the internet without strict firewalls or non-standard ports, you aren't hiding. As more companies shift to cloud infrastructure, the need to secure these servers is non-negotiable. You aren't hidden in the cloud; you're just next in line.
