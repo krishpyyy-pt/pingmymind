@@ -51,7 +51,7 @@ While waiting for the hardware to arrive, I got to work on the software side —
 
 While I had the firmware binary in hand, I ran it through **binwalk** to understand its structure.
 
-```
+```bash
 binwalk -Me main.bin
 ```
 
@@ -67,7 +67,7 @@ I used binwalk on every firmware file I touched throughout this project — the 
 
 Extracting the squashfs filesystem revealed the `/etc/passwd` file. The root password hash was there in plain MD5, unsalted. Running it through hashcat took seconds:
 
-```console
+```bash
 
 hashcat -a 0 -m 0 <hash> rockyou.txt
 
