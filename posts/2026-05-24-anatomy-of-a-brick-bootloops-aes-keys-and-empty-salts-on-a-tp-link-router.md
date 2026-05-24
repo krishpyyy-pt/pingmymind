@@ -4,6 +4,7 @@ layout: _indvposts.njk
 date: 2026-05-24T21:20:00.000+05:30
 tags:
   - post
+  - featured
 draft: false
 excerpt: >-
   This week I wanted to do something fun — something hardware related. I had an
