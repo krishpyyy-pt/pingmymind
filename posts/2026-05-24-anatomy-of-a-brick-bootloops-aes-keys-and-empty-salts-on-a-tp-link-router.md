@@ -51,9 +51,9 @@ While waiting for the hardware to arrive, I got to work on the software side —
 
 While I had the firmware binary in hand, I ran it through **binwalk** to understand its structure.
 
-```bash
+<pre><code>
 binwalk -Me main.bin
-```
+</code></pre>
 
 Binwalk revealed the standard TP-Link layout:
 
@@ -67,11 +67,10 @@ I used binwalk on every firmware file I touched throughout this project — the 
 
 Extracting the squashfs filesystem revealed the `/etc/passwd` file. The root password hash was there in plain MD5, unsalted. Running it through hashcat took seconds:
 
-```bash
+<pre><code>
 
 hashcat -a 0 -m 0 <hash> rockyou.txt
-
-```
+</code></pre>
 ![Hashcat](/images/hashcat.png)
 
 The password? **1234.**
@@ -86,11 +85,11 @@ Going deeper into the extracted filesystem, I found the web interface JavaScript
 
 **Hardcoded 3DES encryption key** — The file `encrypt.js` contained a complete implementation of 3DES encryption used for all web UI communication. The key is derived at runtime from the string `"PKCS5Padding"`:
 
-```javascript
+<pre><code>
 $.genkey('PKCS5Padding', 0, 24)
 // → key: 'PKCS5Padding000000000000'
 // → IV:  '26951234'  (hardcoded)
-```
+</code></pre>
 ![weak web](/images/hard_key_iv.png)
 
 These values are shipped to every browser that connects to the router. Anyone on the LAN who can intercept HTTP traffic to `192.168.0.1` can decrypt every admin session — including login credentials — just by reading the JavaScript.
@@ -101,25 +100,25 @@ These values are shipped to every browser that connects to the router. Anyone on
 
 **Weak AES session key generation** — From `tpEncrypt.js`:
 
-```javascript
+<pre><code>
 var key = (new Date().getTime() + "" + Math.random()*1000000000).substr(0, 16);
-```
+</code></pre>
 
 Session keys are generated from `Date.getTime()` combined with `Math.random()` — neither of which is cryptographically secure. If an attacker knows the approximate login timestamp, the key space is small enough to brute force.
 
 **Session credentials in localStorage** — The entire encrypted session state, including the MD5 password hash, is stored in `localStorage`:
 
-```javascript
+<pre><code>
 localStorage.setItem('encryptorHash', this.encryptor.getHash());
-```
+</code></pre>
 
 This is readable by any JavaScript running on the page, meaning a single XSS vulnerability is enough to steal the admin password hash.
 
 **XSS vectors** — In `jquery.tpBtnGroup.js` and `jquery.tpCheckbox.js`, user-influenced values are concatenated directly into HTML without sanitization:
 
-```javascript
+<pre><code>
 "<label class='label-title " + tag + "'>" + $(bTmp).html() + "</label>"
-```
+</code></pre>
 
 If any of these values touch user-controlled input, they are injectable.
 
@@ -145,9 +144,9 @@ It's harmless code, but it speaks volumes about the development culture — no c
 
 With the hardware in hand, the first step was connecting the UART module to the router's serial header on the PCB (settings: **115200 baud, 8N1**) and using `picocom` to get a console:
 
-```bash
+<pre><code>
 picocom -b 115200 /dev/ttyUSB0
-```
+</code></pre>
 
 The router was indeed stuck in a panic boot loop, but the serial terminal gave us full visibility into the boot process. The bootloader was **U-Boot 1.1.3** running on a **MediaTek MT7628** SoC. By pressing **`4`** during the early boot countdown we could interrupt the loop and drop into the U-Boot menu — giving us options for TFTP recovery.
 
@@ -168,11 +167,11 @@ This is where the CH341A chip programmer came in. The flash chip on the board wa
 
 With the SOIC8 clip attached and the router completely unplugged from AC power:
 
-```bash
+<pre><code>
 sudo flashrom -p ch341a_spi -c "W25Q64JV-.Q" -r firmware_dump_1.bin
 sudo flashrom -p ch341a_spi -c "W25Q64JV-.Q" -r firmware_dump_2.bin
 diff firmware_dump_1.bin firmware_dump_2.bin
-```
+</code></pre>
 
 Reading twice and diffing confirmed the dump was clean — no output from diff means both reads were identical. Running binwalk on the dump confirmed the router's state: only U-Boot had survived, the kernel and filesystem partitions were gone.
 
@@ -182,7 +181,7 @@ The TP-Link factory firmware (`main.bin`) was 8,126,976 bytes. The flash chip is
 
 The solution: stitch the new firmware with the ART data from our own chip dump:
 
-```bash
+<pre><code>
 # Extract our device's ART data
 dd if=firmware_dump_1.bin bs=1 skip=8126976 count=261632 of=art_tail.bin
 
@@ -191,13 +190,13 @@ cat main.bin art_tail.bin > full_flash.bin
 
 # Verify exact 8MB
 stat -c%s full_flash.bin  # → 8388608 ✓
-```
+</code></pre>
 
 Then write it back:
 
-```bash
+<pre><code>
 sudo flashrom -p ch341a_spi -c "W25Q64JV-.Q" -w full_flash.bin
-```
+</code></pre>
 
 ![image](full_firm_upload.png)
 
