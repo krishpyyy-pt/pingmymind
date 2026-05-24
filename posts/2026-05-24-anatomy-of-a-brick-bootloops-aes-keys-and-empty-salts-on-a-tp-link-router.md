@@ -198,6 +198,7 @@ Then write it back:
 ```bash
 sudo flashrom -p ch341a_spi -c "W25Q64JV-.Q" -w full_flash.bin
 ```
+
 ![image](full_firm_upload.png)
 
 Flashrom reported `VERIFIED` — the write was confirmed good.
