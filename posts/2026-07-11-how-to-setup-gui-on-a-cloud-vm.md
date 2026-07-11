@@ -7,6 +7,7 @@ tags:
   - featured
 draft: true
 excerpt: "Today I will show you how to get a GUI for a cloud VM "
+featured_image: /images/gui.png
 ---
 While working on my new project, I hit a interesting roadblock. I needed to run three virtual machines simultaneously, but my local hardware just wasn't powerful enough. I could only run two VMs before the host machine became completely unstable and froze.
 
