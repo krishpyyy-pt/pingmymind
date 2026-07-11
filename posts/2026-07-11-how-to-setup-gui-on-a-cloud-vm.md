@@ -1,7 +1,7 @@
 ---
 title: How to Setup GUI on a Cloud VM
 layout: _indvposts.njk
-date: 2026-07-11T12:32:00.000+05:30
+date: 2026-07-11T12:51:00.000+05:30
 tags:
   - post
   - featured
@@ -29,21 +29,24 @@ vncserver
 ```
 You will be prompted to enter and verify a password (max 8 characters).
 
+![password prompt](/images/password.png)
+
 After setting the password, kill the server so we can configure it properly:
 
 ```bash
 vncserver -kill :1
 ```
-
+![password prompt](/images/kill.png)
 3. Configure the Xstartup File
 Now, open the VNC configuration file:
 
 ```bash
 nano ~/.vnc/xstartup
 ```
-
 Delete whatever is currently in the file and replace it with the following configuration to ensure the XFCE desktop loads correctly:
 
+
+![config prompt](/images/config.png)
 
 ```bash
 #!/bin/bash
@@ -78,9 +81,14 @@ I am using gcloud for this, but you can use standard SSH depending on your cloud
 gcloud compute ssh YOUR_VM_NAME --zone=YOUR_ZONE --ssh-flag="-L 5901:localhost:5901"
 ```
 
+![ssh tunnle command](/images/sshtun.png)
 This command forwards your local port 5901 to the VM's port 5901.
 
 Finally, open Remmina on your local machine. Create a new VNC connection and point it to:
 localhost:5901
 
-Enter the VNC password you created in Step 2, and you will be greeted by your cloud VM's GUI! You can now use it just like a local computer, without melting your host machine's CPU. Enjoy!
+![password prompt](/images/vncpass.png)
+Enter the VNC password you created in Step 2, and you will be greeted by your cloud VM's GUI! 
+
+![password prompt](/images/GUI.png)
+You can now use it just like a local computer, without melting your host machine's CPU. Enjoy!
