@@ -5,7 +5,7 @@ date: 2026-07-11T12:51:00.000+05:30
 tags:
   - post
   - featured
-draft: true
+draft: false
 excerpt: "Today I will show you how to get a GUI for a cloud VM "
 featured_image: /images/gui.png
 ---
